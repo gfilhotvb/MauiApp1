@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.MainPage"
+             Title="GRGR" 
+            
+             >
+
+    <ScrollView>
+        <VerticalStackLayout>
+            
+            <Label
+                Text="PEDIDO DE VENDA"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" 
+            />
+
+            <Grid x:Name="X1">
+                
+                <CollectionView x:Name="COLECTION" BackgroundColor="Tomato" Grid.Row="0">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid  ColumnDefinitions="300,*,AUTO">
+                                <VerticalStackLayout Grid.Column="0">
+                                    <Label Text="{Binding CODPROD}" TextColor="Black" />
+                                </VerticalStackLayout>
+                                <VerticalStackLayout Grid.Column="1">
+                                    <Label Text="{Binding DESCPROD}" TextColor="Black"  />
+                                </VerticalStackLayout>
+                                <VerticalStackLayout Grid.Column="2">
+                                    <Label Text="{Binding UN}" TextColor="Black"/>
+                                </VerticalStackLayout>
+                                <VerticalStackLayout Grid.Column="3">
+                                    <Label Text="{Binding TIPO}" TextColor="Black" />
+                                </VerticalStackLayout>
+                            </Grid>
+
+                        </DataTemplate>
+                        
+                    </CollectionView.ItemTemplate>
+                    
+                    
+                    
+                </CollectionView>
+                
+            </Grid>
+
+            
+           
+  
+            
+            <HorizontalStackLayout Padding="60" Spacing="60">
+                
+                <Button
+                x:Name="bt4"
+                Text="Qualuqe coisa"
+                Clicked="bt2_Clicked"
+                HorizontalOptions="Center"
+                BackgroundColor="red"/>
+                
+                <Button
+                x:Name="bt5"
+                Text="Qualuqe coisa"
+                Clicked="bt2_Clicked"
+                HorizontalOptions="Center"
+                TextColor="Black"
+                BackgroundColor="Yellow"/>
+
+            </HorizontalStackLayout>
+
+
+
+
+ 
+ 
+            
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
