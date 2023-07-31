@@ -110,6 +110,16 @@ public partial class MainPage : ContentPage
 
     private void ImageButton_Clicked(object sender, EventArgs e)
     {
+        var transactionEdit = (new ADD_EDIT());
+        MainThread.BeginInvokeOnMainThread(async () =>
+        {
+            if (Navigation.ModalStack.Count == 0 || Navigation.ModalStack.Last().GetType() != transactionEdit.GetType())
+            {
+                await Navigation.PushModalAsync(transactionEdit);
+                Console.WriteLine("OK -11");
+
+            }
+        });
 
     }
 }
