@@ -49,6 +49,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\add.png" />
 	  <None Remove="Resources\Images\box.png" />
 	  <None Remove="Resources\Images\TESTE.jpg" />
 	</ItemGroup>

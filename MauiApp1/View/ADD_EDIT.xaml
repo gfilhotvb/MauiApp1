@@ -2,8 +2,54 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp1.View.ADD_EDIT"
+             xmlns:handlers="clr-namespace:MauiApp1.Handlers"
              Title="ADD_EDIT">
-    <VerticalStackLayout>
-        <Label x:Name="teste"></Label>
-    </VerticalStackLayout>
+    <ScrollView Margin="20">
+
+        
+        <VerticalStackLayout 
+            Spacing="25" 
+            Padding="30,0" 
+            VerticalOptions="Center">
+            <Border VerticalOptions="Start" BackgroundColor="Aqua"  StrokeShape="RoundRectangle 10">
+                <Label Text="CADASTRO" FontSize="30" HorizontalOptions="Center"></Label>
+            </Border>
+            
+
+            <StackLayout Orientation="Horizontal">
+                <Frame ZIndex="1" HasShadow="True" BorderColor="White" HeightRequest="56" WidthRequest="56" CornerRadius="10">
+                    <Image Source="box.png" HeightRequest="20" WidthRequest="20" />
+                </Frame>
+                <Frame HeightRequest="45" Margin="-20,0,0,0" Padding="0" HasShadow="True" BorderColor="White"  HorizontalOptions="FillAndExpand">
+                    <handlers:BorderlessEntry x:Name ="CODPROD" Margin="20,0,0,0" VerticalOptions="Center" Placeholder="CODPROD"  FontSize="Medium" />
+                </Frame>
+            </StackLayout>
+            
+            <StackLayout Orientation="Horizontal">
+                <Frame ZIndex="1" HasShadow="True" BorderColor="White" HeightRequest="56" WidthRequest="56" CornerRadius="10">
+                    <Image Source="box.png" HeightRequest="20" WidthRequest="20" />
+                </Frame>
+                <Frame HeightRequest="45" Margin="-20,0,0,0" Padding="0" HasShadow="True" BorderColor="White"  HorizontalOptions="FillAndExpand">
+                    <handlers:BorderlessEntry x:Name ="DESCPROD" Margin="20,0,0,0" VerticalOptions="Center" Placeholder="DESCRI"  FontSize="Medium" />
+                </Frame>
+            </StackLayout>
+            
+            <StackLayout Orientation="Horizontal">
+                <Frame ZIndex="1" HasShadow="True" BorderColor="White" HeightRequest="56" WidthRequest="56" CornerRadius="10">
+                    <Image Source="box.png" HeightRequest="20" WidthRequest="20" />
+                </Frame>
+                <Frame HeightRequest="45" Margin="-20,0,0,0" Padding="0" HasShadow="True" BorderColor="White"  HorizontalOptions="FillAndExpand">
+                    <handlers:BorderlessEntry x:Name ="TIPO" Margin="20,0,0,0" VerticalOptions="Center" Placeholder="TIPO"  FontSize="Medium" />
+                </Frame>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" Spacing="60" Padding="5" >
+
+                <Button x:Name="B1"  WidthRequest="100" CornerRadius="10" HorizontalOptions="Center"  BackgroundColor="BlueViolet" Clicked="B1_Clicked"/>
+                <Button x:Name="B2"  WidthRequest="100" CornerRadius="10" HorizontalOptions="Center" Clicked="B2_Clicked"  />
+            </StackLayout>
+
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

@@ -16,12 +16,11 @@
                         HorizontalOptions="Start" 
                     />
                 </Frame>
-                <Image Source="box.png" HeightRequest="30" WidthRequest="30"/>
+                <!--<Image Source="box.png" HeightRequest="30" WidthRequest="30" Margin="10"/>-->
+                <ImageButton Source="ADD.png" HeightRequest="30" WidthRequest="30" Margin="10" HorizontalOptions="End" Clicked="ImageButton_Clicked"></ImageButton>
+                
             </HorizontalStackLayout>
 
-
-       
-            
             <Grid x:Name="X1" >
                 
                 <CollectionView x:Name="COLECTION" BackgroundColor="Tomato" Grid.Row="0" HorizontalScrollBarVisibility="Always">
