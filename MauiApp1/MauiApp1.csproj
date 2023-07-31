@@ -49,6 +49,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\box.png" />
 	  <None Remove="Resources\Images\TESTE.jpg" />
 	</ItemGroup>
 
@@ -60,7 +61,12 @@
 	<ItemGroup>
 	  <Folder Include="NovaPasta\" />
 	  <Folder Include="Repos\" />
-	  <Folder Include="View\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="View\ADD_EDIT.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>

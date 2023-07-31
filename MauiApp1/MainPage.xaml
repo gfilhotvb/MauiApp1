@@ -2,42 +2,60 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp1.MainPage"
-             Title="GRGR" 
+             Title="CADASTRO DE PRODUTO" 
             
              >
 
-    <ScrollView>
-        <VerticalStackLayout>
-            
-            <Label
-                Text="PEDIDO DE VENDA"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" 
-            />
+    <ScrollView >
+        <VerticalStackLayout >
+            <HorizontalStackLayout BackgroundColor="Silver">
+                <Frame BackgroundColor="Silver" HeightRequest="70">
+                    <Label
+                        Text="PRODUTOS"
+                        FontSize="20"
+                        HorizontalOptions="Start" 
+                    />
+                </Frame>
+                <Image Source="box.png" HeightRequest="30" WidthRequest="30"/>
+            </HorizontalStackLayout>
 
-            <Grid x:Name="X1">
+
+       
+            
+            <Grid x:Name="X1" >
                 
-                <CollectionView x:Name="COLECTION" BackgroundColor="Tomato" Grid.Row="0">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <Grid  ColumnDefinitions="300,*,AUTO">
-                                <VerticalStackLayout Grid.Column="0">
-                                    <Label Text="{Binding CODPROD}" TextColor="Black" />
-                                </VerticalStackLayout>
-                                <VerticalStackLayout Grid.Column="1">
-                                    <Label Text="{Binding DESCPROD}" TextColor="Black"  />
-                                </VerticalStackLayout>
-                                <VerticalStackLayout Grid.Column="2">
-                                    <Label Text="{Binding UN}" TextColor="Black"/>
-                                </VerticalStackLayout>
-                                <VerticalStackLayout Grid.Column="3">
-                                    <Label Text="{Binding TIPO}" TextColor="Black" />
-                                </VerticalStackLayout>
-                            </Grid>
+                <CollectionView x:Name="COLECTION" BackgroundColor="Tomato" Grid.Row="0" HorizontalScrollBarVisibility="Always">
+                    <CollectionView.ItemTemplate >
+                        <DataTemplate >
+                            <ScrollView Orientation="Horizontal">
+                                <Grid  ColumnDefinitions="390,auto,auto" >
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer CommandParameter="{Binding .}" Tapped="TapGestureRecognizer_Tapped"/>
+                                    </Grid.GestureRecognizers>
+                                    <Frame Margin="5" Grid.Column="0">
+                                        <Frame.GestureRecognizers>
+                                            <TapGestureRecognizer CommandParameter="{Binding .}" Tapped="TapGestureRecognizer_Tapped_1"/>
+                                        </Frame.GestureRecognizers>
+                                        <VerticalStackLayout >
+                                            <Border  BackgroundColor="Yellow" StrokeShape="RoundRectangle 10" >
+                                                <HorizontalStackLayout >
+                                                    <Image Source="BOX.PNG" Margin="5"></Image>
+                                                    <Label Text="{Binding CODPROD,StringFormat='PRODUTO : {0}'}" TextColor="Black" Margin="10" />
+                                                </HorizontalStackLayout>
+                                            </Border>
+
+                                            <VerticalStackLayout >
+                                                <Label Text="{Binding DESCPROD,StringFormat='DESCRIÇÀO : {0}'}" TextColor="Black"  Margin="3" />
+                                                <Label Text="{Binding UN,StringFormat='UNIDADE : {0}'}" TextColor="Black" Margin="3"/>
+                                                <Label Text="{Binding TIPO,StringFormat='TIPO : {0}'}" TextColor="Black" Margin="3" />
+                                            </VerticalStackLayout>
+                                        </VerticalStackLayout>
+                                    </Frame>
+                                </Grid>
+                            </ScrollView>
 
                         </DataTemplate>
-                        
+                       
                     </CollectionView.ItemTemplate>
                     
                     
@@ -45,11 +63,11 @@
                 </CollectionView>
                 
             </Grid>
+            
 
-            
-           
-  
-            
+
+
+
             <HorizontalStackLayout Padding="60" Spacing="60">
                 
                 <Button
@@ -66,15 +84,17 @@
                 HorizontalOptions="Center"
                 TextColor="Black"
                 BackgroundColor="Yellow"/>
+                
 
             </HorizontalStackLayout>
 
 
 
+            <Image
+                    x:Name="TESTE"
+                    HorizontalOptions="Center"
+                    />
 
- 
- 
-            
 
         </VerticalStackLayout>
     </ScrollView>
