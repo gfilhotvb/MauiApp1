@@ -48,6 +48,10 @@
                                                 <Label Text="{Binding UN,StringFormat='UNIDADE : {0}'}" TextColor="Black" Margin="3"/>
                                                 <Label Text="{Binding TIPO,StringFormat='TIPO : {0}'}" TextColor="Black" Margin="3" />
                                             </VerticalStackLayout>
+                                            <Picker Title="Select a monkey"
+                                                    ItemsSource="{Binding MOT}"
+                                                    ItemDisplayBinding="{Binding DESC}" />
+                                            
                                         </VerticalStackLayout>
                                     </Frame>
                                 </Grid>
