@@ -8,8 +8,9 @@ namespace MauiApp1;
 
 public partial class MainPage : ContentPage
 {
-
-	API_PROTHEUS AP = new API_PROTHEUS();
+    private string _userAvatar = "images/user.png";
+    private string _imageBase64Data;
+    API_PROTHEUS AP = new API_PROTHEUS();
 
 	public MainPage()
 	{
@@ -29,6 +30,32 @@ public partial class MainPage : ContentPage
     private async void bt2_Clicked(object sender, EventArgs e)
     {
 
+
+
+        string response = await App.Current.MainPage.DisplayActionSheet("Select Option", "OK", null, "Take Photo", "Add Photo");
+
+        if (response == "Take Photo")
+        {
+            if (MediaPicker.Default.IsCaptureSupported)
+            {
+                var photo = await MediaPicker.Default.CapturePhotoAsync();
+                if (photo != null)
+                {
+                    byte[] imageBytes;
+                    var newFile = Path.Combine(FileSystem.CacheDirectory, photo.FileName);
+                    var stream = await photo.OpenReadAsync();
+
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        stream.CopyTo(ms);
+                        imageBytes = ms.ToArray();
+                    }
+                    _imageBase64Data = Convert.ToBase64String(imageBytes);
+                    _userAvatar = string.Format("data:image/png;base64,{0}", _imageBase64Data);
+                }
+            }
+        }
+        /*
         var result = await FilePicker.PickAsync(new PickOptions { PickerTitle = "SELECIONAR FILE" ,FileTypes = FilePickerFileType.Images});
         if (result == null)
         {
@@ -36,7 +63,7 @@ public partial class MainPage : ContentPage
         }
         var STREM = await result.OpenReadAsync();
         TESTE.Source = ImageSource.FromStream(()=> STREM);
-       
+       */
 
 
 

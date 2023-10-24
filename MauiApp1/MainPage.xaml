@@ -52,8 +52,8 @@
                                                     ItemsSource="{Binding MOT}"
                                                     ItemDisplayBinding="{Binding DESC}" />
                                             
-                                                  <Frame HeightRequest="70" Margin="0,0,0,0" Padding="0" HasShadow="True" BorderColor="White" HorizontalOptions="FillAndExpand" >
-                                                    <Picker x:Name="PMOTIVOS" Title="SELECIONAR MOTIVO" ItemsSource="{Binding MOT}"  ItemDisplayBinding="{Binding DESC}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="Center" TitleColor="#000"   FontAttributes="Bold" VerticalOptions="Center" FontSize="20"   WidthRequest="1000" HeightRequest="100" />
+                                                  <Frame HeightRequest="70" Margin="0,0,0,0" Padding="0" HasShadow="True" BorderColor="Aqua" HorizontalOptions="FillAndExpand" >
+                                                    <Picker x:Name="PMOTIVOS" Title="SELECIONAR MOTIVO" ItemsSource="{Binding MOT}"  ItemDisplayBinding="{Binding DESC}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" HorizontalOptions="Center" TitleColor="#000" BackgroundColor="Aqua"  FontAttributes="Bold" VerticalOptions="Center" FontSize="20"   WidthRequest="1000" HeightRequest="100" />
                                                     </Frame>
                                             
                                         </VerticalStackLayout>
